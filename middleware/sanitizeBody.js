@@ -7,8 +7,6 @@ const sanitize = (sourceString) => {
         stripIgnoreTagBody: ['script']
     })
 }
-
-
 const stripTags = (payload) => {
     const attributes = Object.assign({}, payload) //{...payload}
     
@@ -16,7 +14,7 @@ const stripTags = (payload) => {
 
         if (attributes[key] instanceof Array){
             attributes[key] = attributes[key].map(element => {
-                if( typeof element === 'string' ) {
+                if(typeof element === 'string' ) {
                     return sanitize(element)
 
                 } else {
@@ -36,8 +34,6 @@ const stripTags = (payload) => {
 
 module.exports = (req, res, next) => {
     const{id, _id, ...attributes} = req.body
-
-
 
     req.sanitizedBody = stripTags(attributes)
 

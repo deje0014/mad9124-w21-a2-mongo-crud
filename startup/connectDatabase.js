@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const createDebug = require('debug')
-const debug = createDebug('assignment02:db')
+const debug = createDebug('mad9124*')
 
 module.exports = function () {
 mongoose
