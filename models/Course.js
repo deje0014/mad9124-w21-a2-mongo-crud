@@ -23,10 +23,8 @@ const schema = new mongoose.Schema({
         required: false,
         maxLength: [512, "URL is too long"]
     },
-    students:  {
-        type: {type: mongoose.Schema.Types.ObjectId, ref: 'Student'},
-        required: false,
-    },
+    students: [{type: mongoose.Schema.Types.ObjectId, ref: 'Student',
+        required: false}]
   })
 
 const Model = mongoose.model('Course', schema)
