@@ -40,7 +40,7 @@ router.put('/:id', sanitizeMongo(), sanitizeBody, async (req, res) => {
                 runValidators: true
             }
         )
-        if(!student) throw new Error('Resource not found')
+        if(!course) throw new Error('Resource not found')
         res.send({data: course})
     } catch (err){
         sendResourceNotFound(req, res)
@@ -60,7 +60,7 @@ router.patch('/:id', sanitizeMongo(), sanitizeBody, async (req, res) => {
             runValidators: true
           }
         )
-        if (!student) throw new Error('Resource not found')
+        if (!course) throw new Error('Resource not found')
         res.send({data: course})
       } catch (err) {
         sendResourceNotFound(req, res)
